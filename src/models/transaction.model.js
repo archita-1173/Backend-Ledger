@@ -1,5 +1,5 @@
 const mongoose= require('mongoose');
-const { Form } = require('react-router-dom');
+
 
 const transactionSchema= new mongoose.Schema({
    fromAccount:{
@@ -42,3 +42,6 @@ const transactionSchema= new mongoose.Schema({
 
 
 })
+
+const transactionModel= mongoose.model('transaction', transactionSchema);
+module.exports= transactionModel;

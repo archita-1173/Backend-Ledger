@@ -40,9 +40,27 @@ async function sendRegistrationEmail(userEmail,name){
     const subject= 'Welcome to our platform';
     const text= `Hi ${name},\n\nThank you for registering on our platform. We're excited to have you on board!`;
     const html= `<p>Hi ${name},</p><p>Thank you for registering on our platform. We're excited to have you on board!</p>`;
-    await sendEmail(userEmail, subject, text, html);
-}
-module.exports= {sendRegistrationEmail};
+    await sendEmail(userEmail, subject, text, html);}
+
+
+    async function sendTransactionEmail(userEmail,name,amount,toAccount){
+
+    const subject= "Trasaction Succesful"
+    const text=''
+    const html=''
+
+    await sendEmail(userEmail,subject,text,html);
+    }
+
+    async function sendTransactionFailureEmail(userEmail,name,amount,toAccount){
+        const subject='Transaction Failed'
+        const text=''
+        const html=''
+
+        await sendEmail(userEmail,subject,text,html);
+    }
+
+module.exports= {sendRegistrationEmail,sendTransactionEmail,sendTransactionFailureEmail};
 
 
 
